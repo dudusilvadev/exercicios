@@ -21,7 +21,7 @@ int main() {
     for (int i = 0; i < tamanho; i++) {
         unsigned char byteDescriptografado = trocarMeioByte(inverterBits(mensagemCriptografada[i]));
         printf("%c", byteDescriptografado);
-        printf("yiv\x00\x17\x92U\x00\x17WU\x00\x17kv\x00");
+
     }
 
     printf("\n");
