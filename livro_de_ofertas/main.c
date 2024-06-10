@@ -14,7 +14,7 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
         int posicao, acao;
         double valor;
         int quantidade;
-        printf("Digite a notificação %d (posição, ação, valor, quantidade): ", i + 1);
+        printf("Digite Respectivamente posição,ação,valor,quantidade: " );
         scanf("%d,%d,%lf,%d", &posicao, &acao, &valor, &quantidade);
 
         // Atualizar a oferta na posição especificada
@@ -28,9 +28,10 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
     }
 
     // Imprimir o resultado
+    printf("\n--------------\n");
     for (int i = 0; i < numNotificacoes; i++) {
+        
         if (ofertas[i].quantidade > 0) {
-            
             printf("%d,%.2lf,%d\n", ofertas[i].posicao -1, ofertas[i].valor, ofertas[i].quantidade);
         }
     }
@@ -38,12 +39,16 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
 
 int main() {
     int numNotificacoes;
-    printf("Digite o número de notificações: ");
+    printf("Digite o numero de notificações: ");
     scanf("%d", &numNotificacoes);
 
     // Inicializar o array de ofertas
     Oferta ofertas[numNotificacoes];
     for (int i = 0; i < numNotificacoes; i++) {
         ofertas[i].quantidade = 0; // Inicialmente, todas as quantidades são zero
-        
     }
+    
+    processarNotificacoes(numNotificacoes, ofertas);
+
+    return 0;
+}
