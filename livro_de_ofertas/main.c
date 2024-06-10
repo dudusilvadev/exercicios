@@ -14,7 +14,7 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
         int posicao, acao;
         double valor;
         int quantidade;
-        printf("Digite Respectivamente posição,ação,valor,quantidade: " );
+        printf("Digite a notificação %d (posição, ação, valor, quantidade): ", i + 1);
         scanf("%d,%d,%lf,%d", &posicao, &acao, &valor, &quantidade);
 
         // Atualizar a oferta na posição especificada
