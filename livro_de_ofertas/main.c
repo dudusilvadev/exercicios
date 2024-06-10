@@ -18,13 +18,29 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
         scanf("%d,%d,%lf,%d", &posicao, &acao, &valor, &quantidade);
 
         // Atualizar a oferta na posição especificada
-        if (acao == 0) { // INSERIR ou MODIFICAR
+/*         if (acao == 0) { // INSERIR ou MODIFICAR
             ofertas[posicao - 1].posicao = posicao;
             ofertas[posicao - 1].valor = valor;
             ofertas[posicao - 1].quantidade = quantidade;
         } else if (acao == 2) { // DELETAR
             ofertas[posicao - 1].quantidade = 0;
-        }
+        } */
+        switch (acao) {
+      case 0: // Inserir
+        ofertas[posicao - 1].posicao = posicao;
+        ofertas[posicao - 1].valor = valor;
+        ofertas[posicao - 1].quantidade = quantidade;
+        break;
+      case 1: // Modificar
+      ofertas[posicao - 1].posicao = posicao ;
+        break;
+      case 2: // Deletar
+        ofertas[posicao - 1].quantidade = 0;
+        break;
+      default:
+        printf("Ação inválida: %d\n", acao);
+    }
+
     }
 
     // Imprimir o resultado
@@ -32,7 +48,7 @@ void processarNotificacoes(int numNotificacoes, Oferta ofertas[]) {
     for (int i = 0; i < numNotificacoes; i++) {
         
         if (ofertas[i].quantidade > 0) {
-            printf("%d,%.2lf,%d\n", ofertas[i].posicao -1, ofertas[i].valor, ofertas[i].quantidade);
+            printf("%d,%.2lf,%d\n", ofertas[i].posicao - 1, ofertas[i].valor, ofertas[i].quantidade);
         }
     }
 }
